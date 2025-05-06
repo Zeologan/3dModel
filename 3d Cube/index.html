@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        body {
+            height: 100vh;
+            background: linear-gradient(151deg, rgba(0, 0, 0, 1), rgba(101, 73, 116, 1));
+            -webkit-background: linear-gradient(151deg, rgba(0, 0, 0, 1), rgba(101, 73, 116, 1));
+            -moz-background: linear-gradient(151deg, rgba(0, 0, 0, 1), rgba(101, 73, 116, 1));
+            color: #fff;
+        }
+
+        .container {
+            font-family: "Montserrat", sans-serif;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .text-box {
+            flex-basis: 40%;
+        }
+
+        #threed {
+            flex-basis: 60%;
+            width: 800px;
+            height: 500px;
+        }
+    </style>
+    <title>3d Model Cube</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-box">
+            <h1>3D Model Cube</h1>
+            <p>A cube is a three-dimensional geometric solid with six square faces, twelve edges, and eight vertices.
+                All edges of a cube are of equal length, and all faces are squares. Dice, sugar cubes, and Rubik's Cubes
+                are examples of objects that are shaped like cubes. </p>
+        </div>
+        <model-viewer id="threed" src="/marching_cubes.glb" autoplay camera-controls smooth disable-zo></model-viewer>
+    </div>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</body>
+
+</html>
