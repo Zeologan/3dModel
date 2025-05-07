@@ -8,15 +8,20 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
         body {
-            height: 100vh;
             background: linear-gradient(151deg, rgba(0, 0, 0, 1), rgba(101, 73, 116, 1));
             -webkit-background: linear-gradient(151deg, rgba(0, 0, 0, 1), rgba(101, 73, 116, 1));
             -moz-background: linear-gradient(151deg, rgba(0, 0, 0, 1), rgba(101, 73, 116, 1));
             color: #fff;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .heading {
+            text-align: center;
+            padding: 20px;
+            font-weight: 500;
         }
 
         .container {
-            font-family: "Montserrat", sans-serif;
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -32,11 +37,42 @@
             width: 800px;
             height: 500px;
         }
+
+        #show_threed {
+            width: 600px;
+            height: 300px;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+
+        /* .appear {
+            animation: appear 1s ease forwards;
+        } */
+
+        model-viewer,
+        .text-box,
+        h1,.heading {
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0 cover 40%;
+        }
     </style>
     <title>3d Model Cube</title>
 </head>
 
 <body>
+    <h1 class="heading">Explore World of Cube</h1>
     <div class="container">
         <div class="text-box">
             <h1>3D Model Cube</h1>
@@ -44,7 +80,28 @@
                 All edges of a cube are of equal length, and all faces are squares. Dice, sugar cubes, and Rubik's Cubes
                 are examples of objects that are shaped like cubes. </p>
         </div>
-        <model-viewer id="threed" src="/marching_cubes.glb" autoplay camera-controls smooth disable-zo></model-viewer>
+        <model-viewer id="threed" src="marching_cubes.glb" autoplay camera-controls smooth disable-zoom></model-viewer>
+    </div>
+    <div class="container">
+        <model-viewer id="threed" src="cube_cascade.glb" autoplay camera-controls smooth disable-zoom></model-viewer>
+        <div class="text-box">
+            <h1>3D Necker Cube</h1>
+            <p>The "metal cube illusion" likely refers to either the Necker cube, a famous visual illusion, or a
+                physical metal cube designed to create a similar illusion of movement or ambiguity. The Necker cube is a
+                wireframe cube that spontaneously switches perspective, appearing to switch between two distinct
+                orientations, illustrating the brain's ambiguous interpretation of visual data. Metal cubes, like the
+                "MetMo Cube", can be crafted to evoke a similar sense of visual ambiguity or movement, playing with how
+                the viewer perceives depth and shape. </p>
+        </div>
+    </div>
+    <h1 class="heading">Cube Gallary Showroom</h1>
+    <div class="container">
+        <model-viewer id="show_threed" src="opera_one_-_spiral_cubes.glb" autoplay camera-controls smooth
+            disable-zoom></model-viewer>
+        <model-viewer id="show_threed" src="placeholder-cube_5.glb" autoplay camera-controls smooth
+            disable-zoom></model-viewer>
+        <model-viewer id="show_threed" src="cube_cascade.glb" autoplay camera-controls smooth
+            disable-zoom></model-viewer>
     </div>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </body>
